@@ -7,12 +7,15 @@ import { scrollToBottomAnimated } from '../helpers/scrollToBottom';
 
 export const SocketContext = createContext();
 
+// const socketUrl = import.meta.env.VITE_APP_API_URL_PRODUC;
+
 
 export const SocketProvider = ({ children }) => {
   const { auth } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
-  const { socket, online, conectarSocket, desconectarSocket } = useSocket('http://localhost:5001');
+  const { socket, online, conectarSocket, desconectarSocket } = useSocket("https://chat-server-socket-io.onrender.com");
+  // console.log(socketUrl);
 
 
 
